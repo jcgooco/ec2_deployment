@@ -1,0 +1,13 @@
+Parameters:
+  KeyName:
+    Description: Name of an existing EC2 key pair for EC2 instance Access.
+    Type: AWS::EC2::KeyPair::KeyName
+
+Resources:
+  DSAServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-065383d02b8c40ff8
+      InstanceType: t2.micro
+      KeyName: !Ref KeyName
+
