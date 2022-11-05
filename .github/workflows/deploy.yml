@@ -23,7 +23,7 @@ jobs:
       # Configure AWS Credential
       - name: Configure AWS Credentials
         #uses: aws-actions/configure-aws-credentials@v1
-        uses: aws-actions/ec2_deployment@v1
+        uses: jgooco/ec2_deployment@v1
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.ACCESS_KEY_SECRET }}
@@ -31,7 +31,7 @@ jobs:
 
       # Deploy to AWS CloudFormation
       - name: Deploy to AWS Cloudformation
-        uses: aws-actions/ec2_deployment@v1
+        uses: jgooco/ec2_deployment@v1
         with:
           name: ec2-test-stack
           template: ec2.yaml
